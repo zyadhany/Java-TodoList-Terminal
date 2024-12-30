@@ -38,7 +38,7 @@ public class Todolist {
         int cnt = 1;
         for (Task task : tasks) {
             System.out.print("Task " + cnt + ":");
-            System.out.println(task);
+            System.out.println(task.toString());
             cnt++;
         }
     }
@@ -48,7 +48,7 @@ public class Todolist {
         for (Task task : tasks) {
             if (!task.getIsDone()) {
                 System.out.print("Task " + cnt + ":");
-                System.out.println(task);
+                System.out.println(task.toString());
                 cnt++;
             }
         }
@@ -59,7 +59,7 @@ public class Todolist {
         for (Task task : tasks) {
             if (task.getIsDone()) {
                 System.out.print("Task " + cnt + ":");
-                System.out.println(task);
+                System.out.println(task.toString());
                 cnt++;
             }
         }
@@ -70,7 +70,7 @@ public class Todolist {
         for (Task task : tasks) {
             if (task.getCategory().equals(category)) {
                 System.out.print("Task " + cnt + ":");
-                System.out.println(task);
+                System.out.println(task.toString());
                 cnt++;
             }
         }
@@ -81,7 +81,7 @@ public class Todolist {
         for (Task task : tasks) {
             if (task.getPriority() == priority) {
                 System.out.print("Task " + cnt + ":");
-                System.out.println(task);
+                System.out.println(task.toString());
                 cnt++;
             }
         }
@@ -94,6 +94,11 @@ public class Todolist {
 
     public void displayTasksSortedByDueDate() {
         tasks.sort((t1, t2) -> t1.getDueDate().compareTo(t2.getDueDate()));
+        displayTasks();
+    }
+
+    public void displayTasksSortedByCategory() {
+        tasks.sort((t1, t2) -> t1.getCategory().compareTo(t2.getCategory()));
         displayTasks();
     }
 }

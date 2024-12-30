@@ -77,15 +77,13 @@ public class Task {
     }
 
     public String toString() {
-        return "Task{" +
-                "id=" + id +
+        return "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", isDone=" + isDone +
                 ", dueDate='" + dueDate + '\'' +
                 ", priority=" + priority +
                 ", category='" + category + '\'' +
-                ", notes='" + notes + '\'' +
-                '}';
+                ", notes='" + notes + '\'';
     }
 }

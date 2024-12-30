@@ -117,6 +117,40 @@ public class UserInterface {
     public int displayTasks() {
         Global.personalList.displayUnfinishedTasks();
         
+        /**
+         * 1. sort by priority
+         * 2. sort by due date
+         * 3. sort by category
+         * else continue
+         * */        
+        // System.out.println("Press enter to continue");
+        
+        while (true) {
+            try {
+                System.out.println("1. Sort by priority");
+                System.out.println("2. Sort by due date");
+                System.out.println("3. Sort by category");
+                System.out.println("4. Continue");
+                int choice = input.nextInt();
+                input.nextLine();
+
+                if (choice == 1) {
+                    Global.personalList.displayTasksSortedByPriority();
+                } else if (choice == 2) {
+                    Global.personalList.displayTasksSortedByDueDate();
+                } else if (choice == 3) {
+                    Global.personalList.displayTasksSortedByCategory();
+                } else if (choice == 4) {
+                    break;
+                } else {
+                    System.out.println("Invalid choice");
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input");
+                input.nextLine();
+            } 
+        }
+
         return interfaceIndex.get("PersonalListMenu");
     }
 
